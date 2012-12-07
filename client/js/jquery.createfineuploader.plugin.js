@@ -1,7 +1,9 @@
 (function($){
     $.fn.createFineUploader = function(ops){
-        var reg = />[\r\n\s]+</g, tpl, list;
-        if( list = this.find('.qq-upload-list') && list.length ) {
+        var reg = />[\r\n\s]+</g,
+            list = this.find('.qq-upload-list'),
+            tpl;
+        if( list.length ) {
             tpl = list.html().replace(reg, '><');
             ops.fileTemplate = $.trim(tpl);
             list.empty();
